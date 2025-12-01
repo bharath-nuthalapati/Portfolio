@@ -602,8 +602,14 @@ footer {
         font-size: 1.8rem;
     }
 
+    /* Reduce section padding to allow glass card to expand */
+    .section {
+        padding: 4rem 1rem;
+    }
+
     .contact-wrapper {
-        padding: 1.5rem 1rem;
+        padding: 2rem 1.5rem;
+        /* More internal padding for glass card */
         gap: 2rem;
     }
 
@@ -612,6 +618,12 @@ footer {
         padding: 0.8rem;
         /* Adjust input padding */
         font-size: 0.95rem;
+    }
+
+    /* Handle long email addresses */
+    .info-item p {
+        font-size: 0.9rem;
+        word-break: break-all;
     }
 }
 
