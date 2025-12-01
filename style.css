@@ -546,9 +546,15 @@ footer {
     .about-content,
     .contact-wrapper {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 1.5rem;
-        /* Reduced padding inside cards */
+        gap: 3rem;
+        /* Increased gap between form and info */
+        padding: 2rem 1.5rem;
+    }
+
+    .contact-info {
+        align-items: center;
+        /* Center align info items */
+        text-align: center;
     }
 
     .section {
@@ -598,6 +604,14 @@ footer {
 
     .contact-wrapper {
         padding: 1.5rem 1rem;
+        gap: 2rem;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        padding: 0.8rem;
+        /* Adjust input padding */
+        font-size: 0.95rem;
     }
 }
 
