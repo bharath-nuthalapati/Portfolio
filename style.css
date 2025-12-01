@@ -467,44 +467,70 @@ footer {
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        padding-top: 120px;
+        padding-top: 100px;
+        /* Reduced top padding */
+        min-height: auto;
+        /* Allow content to dictate height */
+        padding-bottom: 4rem;
     }
 
     .hero-content {
-        margin-bottom: 3rem;
+        max-width: 100%;
+        /* Use full width */
+        margin-bottom: 2rem;
         z-index: 2;
+        padding: 0 1rem;
     }
 
     .hero-visual {
         display: none;
+        /* Keep hidden for simplicity, or could be shown below */
     }
 
     .hero-buttons {
         justify-content: center;
+        flex-wrap: wrap;
+        /* Allow buttons to stack if needed */
+        gap: 1rem;
     }
 
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.8rem;
+        /* Slightly smaller */
     }
 
     .navbar {
-        padding: 1.5rem 2rem;
+        padding: 1rem 1.5rem;
+        /* Compact navbar */
+        background: rgba(15, 15, 15, 0.95);
+        /* More opaque on mobile */
     }
 
     .nav-links {
-        position: absolute;
-        right: 0px;
-        height: 92vh;
-        top: 8vh;
+        position: fixed;
+        /* Fixed to cover screen */
+        right: 0;
+        height: 100vh;
+        top: 0;
         background-color: var(--bg-color);
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 50%;
+        justify-content: center;
+        /* Center items vertically */
+        width: 100%;
+        /* Full width menu */
         transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-        border-left: 1px solid var(--glass-border);
-        padding-top: 2rem;
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+        /* Below hamburger but above content */
+        padding-top: 0;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+        opacity: 0;
+        /* For animation */
     }
 
     .nav-links.open {
@@ -513,16 +539,65 @@ footer {
 
     .hamburger {
         display: block;
+        z-index: 1000;
+        /* Above the menu */
     }
 
     .about-content,
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 1.5rem;
+        /* Reduced padding inside cards */
     }
 
     .section {
-        padding: 4rem 5%;
+        padding: 4rem 1.5rem;
+        /* More horizontal space for content */
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .stat-card h3 {
+        font-size: 2rem;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+        /* Full width buttons on very small screens */
+        text-align: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .contact-wrapper {
+        padding: 1.5rem 1rem;
     }
 }
 
