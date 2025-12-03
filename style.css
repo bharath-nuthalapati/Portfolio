@@ -564,6 +564,11 @@ footer {
 
     .section-title {
         font-size: 2rem;
+        display: block;
+        width: 100%;
+        left: 0;
+        transform: none;
+        text-align: center;
     }
 
     .stat-card h3 {
