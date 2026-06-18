@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const hiddenElements = document.querySelectorAll('.section-title, .about-text, .stat-card, .skill-card, .project-card, .contact-wrapper');
+    const hiddenElements = document.querySelectorAll('.section-title, .about-text, .about-card, .bento-card, .project-card, .contact-wrapper, .timeline-item');
 
     hiddenElements.forEach(el => {
         el.classList.add('hidden');
@@ -38,5 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Hamburger Animation
         hamburger.classList.toggle('toggle');
+    });
+
+    // Close mobile menu when links are clicked
+    const actionLinks = document.querySelectorAll('.nav-links a');
+    actionLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('toggle');
+            links.forEach(l => {
+                l.style.animation = '';
+            });
+        });
     });
 });
